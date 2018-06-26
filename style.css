@@ -1,4 +1,4 @@
-.webtask-red-text {
+.webtask-red-text, .dropdown-content li>span {
   color: #E56E62 !important;
 }
 
@@ -82,7 +82,7 @@ nav {
 @media (min-width: 992px) {
   .sticky-header .header {
     -webkit-transform: scale(0.5, 0.5) translate(-95%, -225%);
-    transform: scale(0.5, 0.5) translate(-95%, -225%);
+    transform: scale(0.5, 0.5) translate(-95%, -140%);
   }
 
   .sticky-header .input-main {

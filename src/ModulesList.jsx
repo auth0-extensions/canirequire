@@ -4,20 +4,11 @@ import Module from './Module.jsx';
 
 import fetch_modules from './fetch_modules';
 
-
-function getToken () {
+function getNodeVersion() {
   try {
-    return GETVal('token');
+    return GETVal('node_version') == '4' ? 4 : 8;
   } catch (e) {
-    return null;
-  }
-}
-
-function getUrl () {
-  try {
-    return GETVal('url');
-  } catch (e) {
-    return null;
+    return '8';
   }
 }
 
@@ -38,8 +29,26 @@ export default class ModulesList extends React.Component {
     };
   }
 
+  componentWillMount() {
+    let $versionDropdown = $('#version-dropdown');
+    $versionDropdown.val(getNodeVersion());
+    $versionDropdown.formSelect(); // force re-draw of Materialize component
+    $versionDropdown.on('change', (e) => {
+      this.setState({ ready: false });
+      fetch_modules($versionDropdown.val())
+        .done((data) => {
+          this.setState({
+            ready: true,
+            node_version: data.node_version,
+            modules: data.modules,
+            limit: 12
+          });
+        });
+    });
+  }
+
   componentDidMount() {
-    fetch_modules(getToken(), getUrl())
+    fetch_modules()
       .done((data) => {
         this.setState({
           ready: true,
@@ -48,10 +57,6 @@ export default class ModulesList extends React.Component {
           limit: 12
         });
       });
-  }
-
-  filter() {
-
   }
 
   loadMore() {
