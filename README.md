@@ -12,7 +12,7 @@ https://auth0-extensions.github.io/canirequire/?node_version=8
 
 Where `node_version` can be either `4` or `8` (the default).
 
-> **Please note that [Node.js v4 is now officilly out of LTS](https://github.com/nodejs/Release#release-schedule) and we strongly encourage you to migrate to Node 8 as soon as possible.** 
+> **Please note that [Node.js v4 is now officially out of LTS](https://github.com/nodejs/Release#release-schedule) and we strongly encourage you to migrate to Node 8 as soon as possible.** 
 >
 > You can check out our [Node 4 to 8 Migration Guide](https://auth0.com/docs/migrations/guides/extensibility-node8) and reach out to us on [our community](https://community.auth0.com/) if you have any questions.
 
