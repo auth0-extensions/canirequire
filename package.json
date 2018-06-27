@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "http-server & gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tehsis/canirequire.git"
+    "url": "https://github.com/auth0-extensions/canirequire.git"
   },
-  "author": "",
+  "author": "Auth0",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tehsis/canirequire/issues"
+    "url": "https://github.com/auth0-extensions/canirequire/issues"
   },
   "browserify": {
     "transform": [
@@ -26,7 +26,7 @@
       ]
     ]
   },
-  "homepage": "https://github.com/tehsis/canirequire",
+  "homepage": "https://github.com/auth0-extensions/canirequire",
   "devDependencies": {
     "babel": "^5.1.13",
     "babelify": "^6.0.2",
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "connect": "^3.3.5",
-    "jquery": "^2.1.4",
+    "jquery": "^3.3.1",
     "react": "^0.13.2"
   }
 }

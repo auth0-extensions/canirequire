@@ -2,8 +2,6 @@ import React from 'react';
 import ModulesList from './src/ModulesList.jsx';
 
 let $searchInput = $('[name=modules-filter]');
-let $tokenInput  = $('[name=wt-token]');
-let $urlInput = $('[name=wt-token]');
 let modulesList = React.render(<ModulesList />, $('#canirequire-modules')[0]);
 
 $searchInput.on('input', function(e) {

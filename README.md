@@ -1,9 +1,13 @@
-# [Can I require](https://tehsis.github.io/webtaskio-canirequire/)
+# [Can I require](https://auth0-extensions.github.io/canirequire/)
 
-Example of a backendless app using https://webtask.io that fetchs
-all modules that can be used by Node on the sandbox.
+Can I require is a simple application running on [Webtask](https://webtask.io) that lists and allows users to search the modules they can require on Auth0 Extensibility points (Rules, Custom DB scripts, and Custom Social Connections).
+
+## Development Instructions
+
+1. ```npm i```
+2. ```npm run dev```
 
 ## Build Instructions
-  1 - ```npm i```
-  
-  2 - ```gulp build```
+
+1. ```npm i```
+2. ```gulp build```

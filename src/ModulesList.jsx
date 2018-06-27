@@ -6,7 +6,7 @@ import fetch_modules from './fetch_modules';
 
 function getNodeVersion() {
   try {
-    return GETVal('node_version') == '4' ? 4 : 8;
+    return GETVal('node_version') == '4' ? '4' : '8';
   } catch (e) {
     return '8';
   }
@@ -48,7 +48,7 @@ export default class ModulesList extends React.Component {
   }
 
   componentDidMount() {
-    fetch_modules()
+    fetch_modules(getNodeVersion())
       .done((data) => {
         this.setState({
           ready: true,
