@@ -1,4 +1,4 @@
-.webtask-red-text {
+.webtask-red-text, .dropdown-content li>span {
   color: #E56E62 !important;
 }
 
@@ -32,9 +32,6 @@ nav {
   transform: scale(0.2, 0.2) translate(-220%, -360%);
 }
 
-.sticky-header .hide-sticky {
-  display: none;
-}
 
 .sticky-header nav {
   -webkit-transform: translate(0, 0);
@@ -42,8 +39,8 @@ nav {
 }
 
 .sticky-header .header {
-  -webkit-transform: scale(0.2, 0.2) translate(-215%, -360%)
-  transform: scale(0.2, 0.2) translate(-215%, -360%)
+  -webkit-transform: scale(0.2, 0.2) translate(-215%, -360%);
+  transform: scale(0.2, 0.2) translate(-215%, -360%);
 }
 
 .sticky-header .input-main {
@@ -69,8 +66,8 @@ nav {
 
 @media (min-width: 600px) {
   .sticky-header .header {
-    -webkit-transform: scale(0.4, 0.4) translate(-102%, -265%);
-    transform: scale(0.4, 0.4) translate(-102%, -265%);
+    -webkit-transform: scale(0.4, 0.4) translate(-90%, -150%);
+    transform: scale(0.4, 0.4) translate(-90%, -150%);
   }
 
   .sticky-header .input-main {
@@ -84,8 +81,8 @@ nav {
 
 @media (min-width: 992px) {
   .sticky-header .header {
-    -webkit-transform: scale(0.5, 0.5) translate(-95%, -225%);
-    transform: scale(0.5, 0.5) translate(-95%, -225%);
+    -webkit-transform: scale(0.5, 0.5) translate(-90%, -140%);
+    transform: scale(0.5, 0.5) translate(-90%, -140%);
   }
 
   .sticky-header .input-main {
