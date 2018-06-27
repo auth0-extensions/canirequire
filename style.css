@@ -39,8 +39,8 @@ nav {
 }
 
 .sticky-header .header {
-  -webkit-transform: scale(0.2, 0.2) translate(-215%, -360%)
-  transform: scale(0.2, 0.2) translate(-215%, -360%)
+  -webkit-transform: scale(0.2, 0.2) translate(-215%, -360%);
+  transform: scale(0.2, 0.2) translate(-215%, -360%);
 }
 
 .sticky-header .input-main {
