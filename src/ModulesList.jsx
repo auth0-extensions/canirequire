@@ -6,13 +6,14 @@ import fetch_modules from './fetch_modules';
 
 function getNodeVersion() {
   try {
-    return GETVal('node_version') == '4' ? '4' : '8';
+    return GETVal('node_version') == '8' ? '8' : '12';
   } catch (e) {
-    return '8';
+    return '12';
   }
 }
 
 function GETVal(key) {
+  console.log(key)
   return window.location.search.substr(1).split('&').map((val) => val.split("=")).filter((val) => val[0] == key)[0][1];
 }
 
