@@ -13,7 +13,6 @@ function getNodeVersion() {
 }
 
 function GETVal(key) {
-  console.log(key)
   return window.location.search.substr(1).split('&').map((val) => val.split("=")).filter((val) => val[0] == key)[0][1];
 }
 
