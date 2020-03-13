@@ -4,11 +4,17 @@ import Module from './Module.jsx';
 
 import fetch_modules from './fetch_modules';
 
+const defaultNodeVersion = 12;
+const versions = {
+  '8': '8',
+  '12': '12'
+};
+
 function getNodeVersion() {
   try {
-    return GETVal('node_version') == '8' ? '8' : '12';
+    return versions[GETVal('node_version')] || defaultNodeVersion;
   } catch (e) {
-    return '12';
+    return defaultNodeVersion;
   }
 }
 
