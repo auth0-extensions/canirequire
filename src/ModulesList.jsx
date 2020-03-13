@@ -7,7 +7,7 @@ import fetch_modules from './fetch_modules';
 const defaultNodeVersion = 12;
 const versions = {
   '8': '8',
-  '12': '12'
+  '12': '12',
 };
 
 function getNodeVersion() {
