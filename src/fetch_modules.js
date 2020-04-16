@@ -3,12 +3,14 @@ export default function(nodeVersion) {
     return $.Deferred().resolve(window.wtModuleList)
   }
 
-  const url = nodeVersion == '4' ?
-    'https://auth0-internal.us.webtask.io/canirequire' :
-    'https://auth0-internal.us8.webtask.io/canirequire'
-  
+  const defaultNodeVersion = 12;
+  const nodeUrls = {
+    '8': 'https://auth0-internal.us8.webtask.io/canirequire',
+    '12': 'https://auth0-internal.stage2-node12.webtask.io/canirequire',
+  };
+
   return $.ajax({
-      url,
+      url: nodeUrls[nodeVersion] || nodeUrls[defaultNodeVersion],
       method: 'GET'
     });
 }
