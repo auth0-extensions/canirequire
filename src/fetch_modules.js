@@ -5,8 +5,8 @@ export default function(nodeVersion) {
 
   const defaultNodeVersion = 12;
   const nodeUrls = {
-    '8': 'https://auth0-internal.us8.webtask.io/canirequire',
-    '12': 'https://auth0-internal.stage2-node12.webtask.io/canirequire',
+    "8": "https://auth0-internal.us8.webtask.io/canirequire",
+    "12": "https://auth0-internal.us12.webtask.io/canirequire",
   };
 
   return $.ajax({
