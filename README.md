@@ -13,7 +13,7 @@ https://auth0-extensions.github.io/canirequire/?node_version=12
 Where `node_version` can be either `8` or `12` (the default).
 
 > **Please note that [Node.js v8 is now officially out of LTS](https://github.com/nodejs/Release#release-schedule) and we strongly encourage you to migrate to Node 12 as soon as possible.**
->
+> **We cannot support increased functionality on Node 8. If you are looking to update your code or add new packages, you need to reference Node 12 packages which we support.**
 
 ## New Package Requests
 
