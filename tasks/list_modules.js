@@ -14,7 +14,11 @@ const abcsort = function (a, b) {
 
 
 const natives = Object.keys(process.binding("natives"))
-    .filter(nativeDep => nativeDep[0] !== '_')
+    .filter(nativeDep => !nativeDep.startsWith('internal/') && 
+        !nativeDep.startsWith('node-inspect/') &&
+        !nativeDep.startsWith('_') &&
+        !nativeDep.startsWith('v8/')
+    )
     .map(dep => ({name: dep, version: 'native'}))
     .sort(abcsort);
 
