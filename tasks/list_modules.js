@@ -13,11 +13,6 @@ const abcsort = function (a, b) {
 };
 
 
-const natives = Object.keys(process.binding("natives"))
-    .filter(nativeDep => nativeDep[0] !== '_')
-    .map(dep => ({name: dep, version: 'native'}))
-    .sort(abcsort);
-
 const manifest = require(Path.join(process.env.VERQUIRE_DIR, 'packages.json'));
 
 
@@ -40,6 +35,6 @@ const modules = Object.keys(manifest).reduce((acc, module_name) => {
 module.exports = cb => {
     cb(null, {
         node_version: process.version,
-        modules: natives.concat(modules)
+        modules: modules
     });
 };
