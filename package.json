@@ -34,11 +34,11 @@
     "event-stream": "^3.3.0",
     "gulp": "^3.8.11",
     "gulp-connect": "^5.7.0",
-    "gulp-livereload": "^3.8.0",
+    "gulp-livereload": "^3.8.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
-    "http-server": "^0.8.0",
+    "http-server": "^14.1.1",
     "reactify": "^1.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
