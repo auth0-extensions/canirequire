@@ -1,8 +1,8 @@
-import React from 'react';
+import { render } from 'react-dom';
 import ModulesList from './src/ModulesList.jsx';
 
 let $searchInput = $('[name=modules-filter]');
-let modulesList = React.render(<ModulesList />, $('#canirequire-modules')[0]);
+let modulesList = render(<ModulesList />, $('#canirequire-modules')[0]);
 
 $searchInput.on('input', function(e) {
   window.location.hash = $(this).val();
@@ -12,14 +12,14 @@ $searchInput.on('input', function(e) {
   });
 });
 
-
-window.addEventListener('hashchange', function () {
+function setInputState() {
+  modulesList.setState({ filter: location.hash.replace('#', ''), limit: 12 });
   $searchInput.val(location.hash.replace('#', ''));
-  modulesList.setState({filter: location.hash.replace('#', ''), limit: 12});
-});
+}
 
-modulesList.setState({filter: location.hash.replace('#', ''), limit: 12});
-$searchInput.val(location.hash.replace('#', ''));
+window.addEventListener('hashchange', setInputState);
+
+setInputState();
 
 let lock = false;
 $(window).on('scroll', function() {
