@@ -2,9 +2,9 @@
   "name": "webtask-canirequire",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
-    "dev": "http-server & gulp watch"
+    "dev": "concurrently 'http-server' 'gulp watch'"
   },
   "repository": {
     "type": "git",
@@ -17,35 +17,41 @@
   },
   "browserify": {
     "transform": [
-      "reactify",
       [
         "babelify",
         {
-          "modules": "commonStrict"
+          "presets": [
+            "@babel/preset-env",
+            [
+              "@babel/preset-react",
+              {
+                "runtime": "automatic"
+              }
+            ]
+          ]
         }
       ]
     ]
   },
   "homepage": "https://github.com/auth0-extensions/canirequire",
   "devDependencies": {
-    "babel": "^5.1.13",
-    "babelify": "^6.0.2",
-    "browserify": "^9.0.8",
-    "event-stream": "^3.3.0",
-    "gulp": "^3.8.11",
-    "gulp-connect": "^5.7.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.4",
-    "http-server": "^0.8.0",
-    "reactify": "^1.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "concurrently": "^8.2.0",
+    "gulp": "^4.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "http-server": "^14.1.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "connect": "^3.3.5",
-    "jquery": "^3.3.1",
-    "react": "^0.14.0"
+    "jquery": "^3.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

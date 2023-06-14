@@ -1,28 +1,26 @@
-var gulp = require('gulp');
-var browserify = require('browserify');
-var babelify= require('babelify');
-var util = require('gulp-util');
-var buffer = require('vinyl-buffer');
-var source = require('vinyl-source-stream');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const util = require('gulp-util');
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('build', function() {
-  browserify('./index.jsx', { debug: true })
-  .add(require.resolve('babel/polyfill'))
-  .transform(babelify)
-  .bundle()
-  .on('error', util.log.bind(util, 'Browserify Error'))
-  .pipe(source('canirequire.js'))
-  .pipe(buffer())
-  .pipe(sourcemaps.init({loadMaps: true}))
-  .pipe(uglify({ mangle: true }))
-  .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('.'));
+gulp.task('build', function () {
+  return browserify({ entries: ['./index.jsx'], debug: true })
+    .bundle()
+    .on('error', util.log.bind(util, 'Browserify Error'))
+    .pipe(source('canirequire.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify({ mangle: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('.'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch(['**/*.jsx', 'src/**.js'], ['build']);
-});
+gulp.task('watch', gulp.series(['build', function () {
+  return gulp.watch(['**/*.jsx', 'src/**.js'], gulp.series(['build']));
+}]));
 
-gulp.task('default', ['build']);
+gulp.task('default', gulp.series(['build']));

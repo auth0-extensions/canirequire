@@ -3,7 +3,6 @@ export default function (nodeVersion) {
     return $.Deferred().resolve(window.wtModuleList);
   }
 
-  const defaultNodeVersion = 16;
   const url = "https://auth0-internal.us.webtask.io/canirequire";
 
   return $.ajax({
