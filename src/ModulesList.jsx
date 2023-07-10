@@ -4,10 +4,11 @@ import Module from './Module.jsx';
 
 import fetch_modules from './fetch_modules';
 
-const defaultNodeVersion = 16;
+const defaultNodeVersion = 18;
 const versions = {
   '12': '12',
   '16': '16',
+  '18': '18'
 };
 
 function getNodeVersion() {
