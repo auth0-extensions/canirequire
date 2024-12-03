@@ -1,7 +1,5 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
-const babelify = require('babelify');
-const util = require('gulp-util');
 const buffer = require('vinyl-buffer');
 const source = require('vinyl-source-stream');
 const uglify = require('gulp-uglify');
@@ -10,7 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 gulp.task('build', function () {
   return browserify({ entries: ['./index.jsx'], debug: true })
     .bundle()
-    .on('error', util.log.bind(util, 'Browserify Error'))
+    .on('error', console.error)
     .pipe(source('canirequire.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
