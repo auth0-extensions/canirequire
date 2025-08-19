@@ -1,6 +1,6 @@
 ## ✏️ Changes
 
-NOTE: We cannot support increased functionality on Node 8. If you are looking to update your code or add new packages, you need to reference Node 12 packages which we support.
+NOTE: Only Node.js 18 and 22 are currently supported. If you are looking to update your code or add new packages, you need to reference Node 18 or Node 22 packages which we support.
 
 > DESCRIPTION GOES HERE. Try to describe both what is changing and why this is important
 > - Make sure you run  when adding / updating a package
