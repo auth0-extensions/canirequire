@@ -7,12 +7,12 @@ The Node version dropdown allows you to select the same runtime version your Aut
 A runtime can also be pre-selected by passing it as a query parameter, like so:
 
 ```
-https://auth0-extensions.github.io/canirequire/?node_version=22
+https://auth0-extensions.github.io/canirequire/?node_version=26
 ```
 
-Where `node_version` can be either `18` or `22` (the default).
+Where `node_version` can be `18`, `22` (the default), or `26`.
 
-> **Please note that only Node.js 18 and 22 are currently supported. We strongly encourage you to use Node.js 22 for the latest features and best performance.**
+> **The runtime selector supports Node.js 18, 22, and 26.**
 
 ## Development Instructions
 
